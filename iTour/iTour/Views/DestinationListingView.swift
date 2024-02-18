@@ -48,6 +48,7 @@ struct DestinationListingView: View {
             }
             .onDelete(perform: deleteDestination)
         }
+        .scrollDismissesKeyboard(.interactively)
     }
     
     func deleteDestination(at indexSet: IndexSet) {

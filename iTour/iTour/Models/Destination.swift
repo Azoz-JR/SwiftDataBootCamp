@@ -15,11 +15,13 @@ class Destination {
     var date: Date
     var priority: Int
     @Relationship(deleteRule: .cascade) var sights = [Sight]()
+    @Attribute(.externalStorage) var photo: Data?
     
-    init(name: String = "", details: String = "", date: Date = .now, priority: Int = 2) {
+    init(name: String = "", details: String = "", date: Date = .now, priority: Int = 2, photo: Data? = nil) {
         self.name = name
         self.details = details
         self.date = date
         self.priority = priority
+        self.photo = photo
     }
 }
